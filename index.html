@@ -12,18 +12,18 @@
   <meta name="author" content="Setia Awan Group">
   
   <!-- Canonical URL -->
-  <link rel="canonical" href="https://astrumshahalam.com/">
+  <link rel="canonical" href="https://astrumshahalam.net/">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://astrumshahalam.com/">
+  <meta property="og:url" content="https://astrumshahalam.net/">
   <meta property="og:title" content="Astrum Shah Alam | Premium Serviced Apartments">
   <meta property="og:description" content="Your H.O.M.E right in the centre of Shah Alam. Premium serviced apartments with direct LRT access and 50+ facilities.">
   <meta property="og:image" content="assets/images/og-image.webp">
   
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://astrumshahalam.com/">
+  <meta name="twitter:url" content="https://astrumshahalam.net/">
   <meta name="twitter:title" content="Astrum Shah Alam | Premium Serviced Apartments">
   <meta name="twitter:description" content="Your H.O.M.E right in the centre of Shah Alam. Premium serviced apartments with direct LRT access and 50+ facilities.">
   <meta name="twitter:image" content="assets/images/og-image.webp">
@@ -47,8 +47,8 @@
     "@type": "RealEstateListing",
     "name": "Astrum Shah Alam",
     "description": "Premium serviced apartments in the heart of Shah Alam with direct LRT access",
-    "url": "https://astrumshahalam.com",
-    "image": "https://astrumshahalam.com/assets/images/hero-building.webp",
+    "url": "https://astrumshahalam.net",
+    "image": "https://astrumshahalam.net/assets/images/hero-building.webp",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Section 14",
@@ -88,8 +88,8 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Setia Awan Group",
-    "url": "https://astrumshahalam.com",
-    "logo": "https://astrumshahalam.com/assets/images/logo.webp",
+    "url": "https://astrumshahalam.net",
+    "logo": "https://astrumshahalam.net/assets/images/logo.webp",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+60123456789",
@@ -104,7 +104,8 @@
     <div class="container">
       <div class="header__inner">
         <a href="index.html" class="header__logo" aria-label="Astrum Shah Alam Home">
-          <div class="header__logo-icon">A</div>
+          <!-- <div class="header__logo-icon">A</div> -->
+		  <img src="assets/images/logo.png" alt="Astrum Shah Alam Logo" class="logo-img">
           <div class="header__logo-text">
             ASTRUM
             <span>Shah Alam</span>
@@ -157,7 +158,7 @@
         </h1>
         
         <p class="hero__subtitle">Your H.O.M.E Right In The Centre Of Shah Alam</p>
-        
+        <!--
         <div class="hero__stats">
           <div class="hero__stat">
             <div class="hero__stat-value">3</div>
@@ -176,9 +177,10 @@
             <div class="hero__stat-label">Facilities</div>
           </div>
         </div>
-        
+        -->   
         <div class="hero__cta">
-          <a href="#" class="btn btn--whatsapp btn--large" data-whatsapp data-message="Hi, I'm interested in Astrum Shah Alam. Please send me more information about available units.">
+          <a href="#" class="btn btn--whatsapp btn--large" data-whatsapp
+  data-phone="60125560400" data-message="Hi, I'm interested in Astrum Shah Alam. Please send me more information about available units.">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             WhatsApp Us
           </a>
@@ -205,18 +207,25 @@
         
         <div class="location__grid">
           <div class="location__map">
-            <img src="assets/images/location-map.webp" alt="Astrum Shah Alam location map" loading="lazy">
-            <div class="location__map-overlay">
-              <div class="location__lrt">
-                <div class="location__lrt-icon">🚇</div>
-                <div class="location__lrt-text">
-                  <h4>Dato' Menteri LRT</h4>
-                  <p>Direct access at your doorstep</p>
-                </div>
-              </div>
-            </div>
+            <img src="assets/images/location-map1.webp" alt="Astrum Shah Alam location map" loading="lazy">
+			
+            
           </div>
-          
+		  <div class="location__map">
+            <img src="assets/images/location-map.webp" alt="Astrum Shah Alam location map" loading="lazy">
+            
+          </div>
+		  <div class="location__map">
+            
+			<img src="assets/images/location-map2.webp" alt="Astrum Shah Alam location map" loading="lazy">
+			
+           
+          </div>
+		  <div class="location__map">
+            <img src="assets/images/location-map3.webp" alt="Astrum Shah Alam location map" loading="lazy">
+            
+          </div>
+          <!--
           <div class="location__info">
             <h3>Connected to Everything</h3>
             
@@ -273,10 +282,10 @@
               </div>
             </div>
           </div>
+		  -->
         </div>
       </div>
     </section>
-
     <!-- Amenities Grid -->
     <section class="amenities">
       <div class="container">
@@ -338,7 +347,7 @@
         </div>
         
         <div class="home-concept">
-          <div class="home-card">
+         <div class="home-card" style="background-image: url('assets/images/harmony-bg.webp');">
             <div class="home-card__letter">H</div>
             <h3 class="home-card__title">Harmony</h3>
             <p class="home-card__desc">Great doorstep accessibility in a mature township</p>
@@ -350,19 +359,19 @@
             </ul>
           </div>
           
-          <div class="home-card">
+          <div class="home-card" style="background-image: url('assets/images/harmony-os.webp');">
             <div class="home-card__letter">O</div>
             <h3 class="home-card__title">Oasis</h3>
             <p class="home-card__desc">Nestled near 106 acres of lush greenery</p>
             <ul class="home-card__features">
-              <li>Taman Tasik Shah Alam - 350m</li>
-              <li>60% greenery, 40% modernity</li>
+              <li>Taman Tasik ShahAlam-350m</li>
+              <li>60% greenery,40% modernity</li>
               <li>Scenic lakes & water activities</li>
               <li>Leisure & entertainment nearby</li>
             </ul>
           </div>
           
-          <div class="home-card">
+          <div class="home-card" style="background-image: url('assets/images/harmony-mo.png');">
             <div class="home-card__letter">M</div>
             <h3 class="home-card__title">Modernization</h3>
             <p class="home-card__desc">Exclusive facilities & smart living features</p>
@@ -374,7 +383,7 @@
             </ul>
           </div>
           
-          <div class="home-card">
+          <div class="home-card" style="background-image: url('assets/images/harmony-e.webp');">
             <div class="home-card__letter">E</div>
             <h3 class="home-card__title">Enclave</h3>
             <p class="home-card__desc">Central hub connected to all conveniences</p>
@@ -514,24 +523,32 @@
         </div>
         
         <div class="facilities__showcase">
-          <div class="facilities__main-image">
-            <img src="assets/images/facility-pool.webp" alt="50m Lap Pool at Astrum Shah Alam" loading="lazy">
-          </div>
-          <div class="facilities__gallery">
-            <div class="facilities__gallery-item" data-label="Smart Gym">
-              <img src="assets/images/facility-gym.webp" alt="Smart Gym" loading="lazy">
-            </div>
-            <div class="facilities__gallery-item" data-label="Kids Playground">
-              <img src="assets/images/facility-playground.webp" alt="Kids Playground" loading="lazy">
-            </div>
-            <div class="facilities__gallery-item" data-label="Karaoke Room">
-              <img src="assets/images/facility-karaoke.webp" alt="Karaoke Room" loading="lazy">
-            </div>
-            <div class="facilities__gallery-item" data-label="Multipurpose Court">
-              <img src="assets/images/facility-multipurposecourt.webp" alt="BBQ Terrace" loading="lazy">
-            </div>
-          </div>
-        </div>
+  <div class="facilities__main-image-top">
+    <img src="assets/images/facility-main.webp" alt="Podium Level 9 Layout" loading="lazy">
+	<img src="assets/images/facility-main1.webp" alt="Podium Level 9 Layout" loading="lazy">
+  </div>
+  
+  <div class="facilities__gallery-grid">
+    <div class="facilities__gallery-item" data-label="Infinity Pool">
+      <img src="assets/images/facility-pool.webp" alt="Swimming Pool" loading="lazy">
+    </div>
+    <div class="facilities__gallery-item" data-label="Smart Gym">
+      <img src="assets/images/facility-gym.webp" alt="Smart Gym" loading="lazy">
+    </div>
+    <div class="facilities__gallery-item" data-label="Kids Playground">
+      <img src="assets/images/facility-playground.webp" alt="Kids Playground" loading="lazy">
+    </div>
+    <div class="facilities__gallery-item" data-label="Karaoke Room">
+      <img src="assets/images/facility-karaoke.webp" alt="Karaoke Room" loading="lazy">
+    </div>
+    <div class="facilities__gallery-item" data-label="Multipurpose Court">
+      <img src="assets/images/facility-multipurposecourt.webp" alt="Sports Court" loading="lazy">
+    </div>
+	<div class="facilities__gallery-item" data-label="Lawn Area">
+      <img src="assets/images/facility-lawn.webp" alt="Sports Court" loading="lazy">
+    </div>
+    </div>
+</div>
         
         <div class="facilities__categories">
           <div class="facility-category">
@@ -588,7 +605,7 @@
         
         <div class="retail__grid">
           <div class="retail__image">
-            <img src="assets/images/retail-boulevard.webp" alt="14th Avenue Retail Boulevard" loading="lazy">
+            <img src="assets/images/retail-boulevard_bkp.webp" alt="14th Avenue Retail Boulevard" loading="lazy">
           </div>
           
           <div class="retail__content">
@@ -722,12 +739,14 @@
               <div class="contact__item-icon">💬</div>
               <div>
                 <h4>WhatsApp</h4>
-                <p><a href="#" data-whatsapp>Chat with us now</a></p>
+                <p><a href="#" data-whatsapp
+  data-phone="60125560400">Chat with us now</a></p>
               </div>
             </div>
             
             <div class="contact__buttons">
-              <a href="#" class="btn btn--whatsapp" data-whatsapp data-message="Hi, I'd like to schedule a visit to the Astrum Shah Alam sales gallery.">
+              <a href="#" class="btn btn--whatsapp" data-whatsapp
+  data-phone="60125560400" data-message="Hi, I'd like to schedule a visit to the Astrum Shah Alam sales gallery.">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                 WhatsApp Us
               </a>
@@ -902,7 +921,8 @@
       <div class="chatbot-answer"></div>
     </div>
     <div class="chatbot-panel__footer">
-      <a href="#" class="chatbot-whatsapp" data-whatsapp data-message="Hi, I have questions about Astrum Shah Alam.">
+      <a href="#" class="chatbot-whatsapp" data-whatsapp
+  data-phone="60125560400" data-message="Hi, I have questions about Astrum Shah Alam.">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Chat on WhatsApp Instead
       </a>
@@ -910,7 +930,8 @@
   </div>
 
   <!-- WhatsApp Floating Button -->
-  <a href="#" class="whatsapp-float" data-whatsapp data-message="Hi, I'm interested in Astrum Shah Alam." aria-label="Chat on WhatsApp">
+  <a href="#" class="whatsapp-float" data-whatsapp
+  data-phone="60125560400" data-message="Hi, I'm interested in Astrum Shah Alam." aria-label="Chat on WhatsApp">
     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
 

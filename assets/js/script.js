@@ -378,7 +378,7 @@
   // ============================================
   // WhatsApp Integration
   // ============================================
-  function initWhatsApp() {
+ /* function initWhatsApp() {
     const whatsappButtons = document.querySelectorAll('[data-whatsapp]');
     
     whatsappButtons.forEach(btn => {
@@ -389,7 +389,35 @@
         window.open(url, '_blank');
       });
     });
-  }
+  } */
+  function initWhatsApp() {
+  const whatsappButtons = document.querySelectorAll('[data-whatsapp]');
+
+  whatsappButtons.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      const message =
+        btn.dataset.message ||
+        `Hi, I'm interested in ${CONFIG.projectName}. Please send me more information.`;
+
+      // ✅ Allow per-button override, fallback to CONFIG
+      const phone =
+        btn.dataset.phone ||
+        btn.getAttribute("href")?.match(/wa\.me\/(\d+)/)?.[1] ||
+        CONFIG.whatsappNumber;
+
+      if (!phone) {
+        console.error("WhatsApp phone number missing. Set CONFIG.whatsappNumber or data-phone.");
+        return;
+      }
+
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank", "noopener,noreferrer");
+    });
+  });
+}
+
 
   // ============================================
   // Form Validation
