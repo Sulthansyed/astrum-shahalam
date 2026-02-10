@@ -135,61 +135,38 @@
 
   <main>
     <!-- Hero Section -->
-    <section class="hero" id="hero">
-      <div class="hero__bg">
-        <!-- <img src="assets/images/hero-building.webp" alt="Astrum Shah Alam building exterior" loading="eager"> -->
-					<video class="hero-bg-video" autoplay muted loop playsinline preload="auto">
-    <!-- Optional WebM fallback -->
-    <source src="assets/videos/hero.webm" type="video/webm">
-		</video>
-      </div>
-      <div class="hero__overlay"></div>
-      <div class="hero__pattern"></div>
-      
-      <div class="hero__content">
-        <div class="hero__badge">
-          <span class="hero__badge-dot"></span>
-          Now Open for Registration
+    <section class="hero hero--split" id="hero">
+      <div class="hero__layout">
+        <div class="hero__panel">
+          <p class="hero__eyebrow">Stay Connected Always</p>
+
+          <h1 class="hero__headline" aria-label="Transit Oriented Development">
+            TRANSIT<br>
+            ORIENTED<br>
+            DEVELOPMENT
+          </h1>
+
+          <p class="hero__subheadline">Final Phase Open Now!</p>
+
+          <ul class="hero__bullets">
+            <li>2/3/4 Bedroom</li>
+            <li>Dual Key Concept</li>
+            <li>Walk To Dato&rsquo; Menteri LRT</li>
+            <li>Most Exciting Eatery Boulevard</li>
+            <li>Integrated Development</li>
+          </ul>
+
+          <p class="hero__callout">
+            Sheltered Walkway<br>
+            To Dato&rsquo; Menteri LRT
+          </p>
         </div>
-        
-        <h1 class="hero__title">
-          ASTRUM
-          <span>Shah Alam</span>
-        </h1>
-        
-        <p class="hero__subtitle">Your H.O.M.E Right In The Centre Of Shah Alam</p>
-        <!--
-        <div class="hero__stats">
-          <div class="hero__stat">
-            <div class="hero__stat-value">3</div>
-            <div class="hero__stat-label">Towers</div>
-          </div>
-          <div class="hero__stat">
-            <div class="hero__stat-value">1,252</div>
-            <div class="hero__stat-label">Units</div>
-          </div>
-          <div class="hero__stat">
-            <div class="hero__stat-value">570-1,065</div>
-            <div class="hero__stat-label">Sq.Ft</div>
-          </div>
-          <div class="hero__stat">
-            <div class="hero__stat-value">50+</div>
-            <div class="hero__stat-label">Facilities</div>
-          </div>
-        </div>
-        -->   
-        <div class="hero__cta">
-          <a href="#" class="btn btn--whatsapp btn--large" data-whatsapp
-  data-phone="60125560400" data-message="Hi, I'm interested in Astrum Shah Alam. Please send me more information about available units.">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            WhatsApp Us
-          </a>
-          <a href="contact.html" class="btn btn--secondary btn--large">
-            Register Interest
-          </a>
+
+        <div class="hero__media">
+          <img class="hero__image" src="assets/images/hero-building.png" alt="Astrum Shah Alam development render" loading="eager">
         </div>
       </div>
-      
+
       <div class="hero__scroll">
         <div class="hero__scroll-icon"></div>
         Scroll to explore
@@ -286,6 +263,45 @@
         </div>
       </div>
     </section>
+
+    <!-- Project Details (added after Location) -->
+    <section class="project-details" id="project-details">
+      <div class="container project-details__grid">
+        <!-- Left: Google Drive video embed (replace FILE_ID with your Drive file id) -->
+        <div class="project-details__media" aria-label="Project details video">
+          <div class="project-details__video-card">
+            <iframe
+              class="project-details__iframe"
+              src="https://drive.google.com/file/d/19FS4xFqaSrpIqTUmgS9DTQn7Q-9wqaII/preview"
+              title="Astrum Shah Alam - Project Details Video"
+              allow="autoplay; encrypted-media"
+              allowfullscreen
+              loading="lazy"></iframe>
+          </div>
+        </div>
+
+        <!-- Right: Content -->
+        <div class="project-details__content">
+          <h2 class="project-details__title">PROJECT<br>DETAILS</h2>
+          <p class="project-details__subtitle">Vibrant, Convenient, Home</p>
+
+          <ul class="project-details__list" role="list">
+            <li>1,252 Units</li>
+            <li>32 Storeys</li>
+            <li>3 Towers</li>
+            <li>3.47 Acres</li>
+            <li>2 / 3 / 4 Bedrooms</li>
+            <li>Leasehold</li>
+            <li>2028 Completion</li>
+            <li>Integrated With <a class="project-details__link" href="retail-shoplot.html">14th Avenue Retails</a></li>
+          </ul>
+
+          <p class="project-details__price">From RM 3xxK Only!</p>
+        </div>
+      </div>
+    </section>
+
+
     <!-- Amenities Grid -->
     <section class="amenities">
       <div class="container">
