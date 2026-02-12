@@ -3032,16 +3032,14 @@ section {
   .project-details__media{ order: 1; }
   .project-details__content{ order: 2; }
 }
-.hero {
-  background-size: cover;
-  background-position: center;
-}
-
+/* Fix hero image cropping on mobile */
 @media (max-width: 768px) {
-  .hero {
-    background-size: contain;
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-color: #000; /* optional */
+  .hero--split .hero__image {
+    object-fit: contain;
+    background: #000; /* optional for empty space */
+  }
+
+  .hero--split .hero__media {
+    min-height: auto;
   }
 }
