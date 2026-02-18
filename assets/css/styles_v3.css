@@ -3684,6 +3684,70 @@ section {
   .location-combined__grid > :nth-child(4) { order: 7; }  /* img4 */
   .location-combined__grid > :nth-child(8) { order: 8; }  /* card4 */
 }
+/* =====================================
+   Gallery Captions
+   ===================================== */
+
+.location-combined__image {
+  display: flex;
+  flex-direction: column;
+}
+
+.location-combined__image img {
+  width: 100%;
+  border-radius: 16px;
+  display: block;
+}
+
+.location-combined__caption {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--gold); /* or #b98a3c */
+}
+/* =====================================
+   LRT Connectivity Section
+   ===================================== */
+
+.connectivity {
+  padding: 100px 0;
+  background: #f8f8f8;
+}
+
+.connectivity__header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px;
+}
+
+.connectivity__eyebrow {
+  color: var(--gold);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+
+.connectivity__title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 20px;
+}
+
+.connectivity__desc {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.connectivity__map {
+  margin-top: 40px;
+}
+
+.connectivity__map img {
+  width: 100%;
+  height: auto;
+  border-radius: 24px;
+  display: block;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.08);
+}
 
 
 
