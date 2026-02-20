@@ -3846,81 +3846,93 @@ section {
   }
 
 }
-/* =====================================
-   Full Stretch Image on Mobile
-   ===================================== */
+/* =========================================
+   Home Landing Page - Full Width LRT Map
+   ========================================= */
 
 @media (max-width: 768px) {
 
-  .location__map {
-    width: 100vw;
-    margin-left: 50%;
-    transform: translateX(-50%);
+  #home-connectivity .container {
+    padding-left: 0;
+    padding-right: 0;
   }
 
-  .location__map img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 0; /* remove rounded corners for full stretch */
-  }
-
-}
-@media (max-width: 768px) {
-
-  /* Let the map break out of any container clipping */
-  .location__map{
+  #home-connectivity .connectivity__map {
     position: relative;
     left: 50%;
     right: 50%;
     width: 100vw;
     margin-left: -50vw;
     margin-right: -50vw;
-    max-width: 100vw;
   }
 
-  .location__map img{
+  #home-connectivity .connectivity__map img {
     width: 100%;
-    height: auto;
+    height: auto; /* no cropping */
     display: block;
-    border-radius: 0;
+    border-radius: 0; /* remove rounded corners for full bleed */
   }
 
 }
+/* HOME ONLY: Make Connectivity map full-bleed on mobile */
 @media (max-width: 768px) {
-  .connectivity,
-  .connectivity .container{
-    overflow: visible !important;
-  }
-}
-
-
-/* =========================================================
-   Mobile full-bleed for Connectivity image (LRT map)
-   Ensures the image spans edge-to-edge on small screens
-   ========================================================= */
-@media (max-width: 768px) {
-  /* Remove container side padding only within connectivity section */
-  .connectivity .container {
+  /* remove container constraints ONLY for this section */
+  #home-connectivity > .container {
+    max-width: 100% !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
 
-  /* Break out of centered container to full viewport width */
-  .connectivity__map {
+  /* breakout to full viewport width */
+  #home-connectivity .connectivity__map {
     width: 100vw !important;
     max-width: 100vw !important;
     margin-left: calc(50% - 50vw) !important;
     margin-right: calc(50% - 50vw) !important;
-    border-radius: 0 !important; /* full-bleed look; remove if you want rounded corners */
-    overflow: visible !important;
   }
 
-  .connectivity__map img {
+  /* ensure image truly fills the full-bleed wrapper */
+  #home-connectivity .connectivity__map img {
     width: 100% !important;
-    height: auto !important;      /* no cropping */
-    object-fit: contain !important; /* keep full image visible */
+    max-width: 100% !important;
+    height: auto !important; /* no cropping */
     display: block;
-    border-radius: 0 !important;
+    border-radius: 0 !important; /* remove curve so it reaches edges */
   }
 }
+/* Full width connectivity image */
+
+.connectivity__map {
+  width: 100%;
+}
+
+.connectivity__map img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0; /* remove rounding */
+}
+/* Target your hero section */
+.hero {
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* 'center center' keeps the middle of the image visible as the sides crop */
+  background-position: center center; 
+  width: 100%;
+  min-height: 80vh; /* Adjust based on your design */
+}
+
+/* Mobile Specific Adjustment */
+@media (max-width: 768px) {
+  .hero {
+    /* If the building is on the left, use 'left center' 
+       If it's in the middle, stick with 'center center' */
+    background-position: center center; 
+    
+    /* This ensures the hero is tall enough to show the image on skinny screens */
+    min-height: 60vh; 
+  }
+}
+
+
+
