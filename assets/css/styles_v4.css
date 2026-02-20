@@ -3895,5 +3895,32 @@ section {
 }
 
 
+/* =========================================================
+   Mobile full-bleed for Connectivity image (LRT map)
+   Ensures the image spans edge-to-edge on small screens
+   ========================================================= */
+@media (max-width: 768px) {
+  /* Remove container side padding only within connectivity section */
+  .connectivity .container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
 
+  /* Break out of centered container to full viewport width */
+  .connectivity__map {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    border-radius: 0 !important; /* full-bleed look; remove if you want rounded corners */
+    overflow: visible !important;
+  }
 
+  .connectivity__map img {
+    width: 100% !important;
+    height: auto !important;      /* no cropping */
+    object-fit: contain !important; /* keep full image visible */
+    display: block;
+    border-radius: 0 !important;
+  }
+}
