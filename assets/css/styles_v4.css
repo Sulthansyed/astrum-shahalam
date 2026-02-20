@@ -655,9 +655,9 @@ section {
   z-index: 5;
   display: grid;
   grid-template-columns: 2fr 3fr; /* 40% / 60% */
-  min-height: 100vh;
+  min-height: 82vh;
   width: 100%;
-  padding-top: 110px; /* space for fixed header */
+  padding-top: 90px; /* space for fixed header */
 }
 
 .hero--split .hero__panel {
@@ -994,6 +994,110 @@ section {
 @media (max-width: 1024px) {
   .location__grid {
     grid-template-columns: 1fr;
+  }
+}
+
+
+/* ---------- Location Showcase (Image Grid like brochure) ---------- */
+.location-showcase {
+  display: grid;
+  grid-template-columns: 0.9fr 1.05fr 1.05fr;
+  gap: var(--space-2xl);
+  align-items: center;
+}
+
+.location-showcase__left {
+  display: grid;
+  gap: var(--space-xl);
+}
+
+.location-showcase__img {
+  border-radius: 28px;
+  overflow: hidden;
+  background: var(--white);
+  box-shadow: var(--shadow-xl);
+  border: 1px solid rgba(10, 22, 40, 0.08);
+}
+
+.location-showcase__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.location-showcase__img--small {
+  height: 220px;
+}
+
+.location-showcase__img--large {
+  height: 520px;
+}
+
+.location-showcase__content {
+  padding: clamp(1.25rem, 2vw, 2rem);
+}
+
+.location-showcase__eyebrow {
+  font-family: var(--font-body);
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.02em;
+  margin-bottom: var(--space-sm);
+}
+
+.location-showcase__title {
+  font-family: var(--font-body);
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--primary);
+  font-size: clamp(2.2rem, 3.6vw, 3.4rem);
+  line-height: 0.95;
+  margin-bottom: var(--space-lg);
+}
+
+.location-showcase__desc {
+  font-size: 1.05rem;
+  color: var(--text-body);
+  max-width: 36ch;
+  margin-bottom: var(--space-lg);
+}
+
+.location-showcase__callout {
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 800;
+  color: var(--gold);
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .location-showcase {
+    grid-template-columns: 1fr;
+  }
+
+  .location-showcase__img--large {
+    height: 420px;
+  }
+
+  .location-showcase__content {
+    padding: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .location-showcase__left {
+    grid-template-columns: 1fr;
+  }
+
+  .location-showcase__img--small {
+    height: 200px;
+  }
+
+  .location-showcase__img--large {
+    height: 340px;
   }
 }
 
@@ -2771,30 +2875,33 @@ section {
   border-radius: 28px;
   overflow: hidden;
 
-  /* the "frame" */
+  /* frame layer (like reference) */
   padding: 10px;
-  background: rgba(0,0,0,0.18);
-  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.30);
 }
 
-/* subtle inner outline like reference */
+/* subtle inner outline */
 .project-details__video-card::after{
-  content:"";
-  position:absolute;
-  inset:10px;              /* must match padding above */
+  content: "";
+  position: absolute;
+  inset: 10px;            /* must match padding above */
   border-radius: 20px;
-  pointer-events:none;
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12);
+  pointer-events: none;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
 }
 
-
 /* Keep a clean aspect ratio */
-.project-details__iframe {
+.project-details__iframe{
   width: 100%;
   aspect-ratio: 16 / 9;
   border: 0;
   display: block;
+
+  /* ensure iframe corners match inner clip */
+  border-radius: 20px;
+  background: #000;
 }
 
 /* Typography */
@@ -2903,3 +3010,863 @@ section {
     height: 26px;
   }
 }
+/* =========================
+   PROJECT DETAILS (match reference)
+   - all text white
+   - bold title
+   - framed media card
+   ========================= */
+
+.project-details {
+  /* keep your gold background */
+  color: #fff;
+}
+
+.project-details * {
+  color: #fff; /* force ALL text white */
+}
+
+/* Title + subtitle */
+.project-details__title {
+  color: #fff !important;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.project-details__subtitle {
+  color: rgba(255,255,255,0.92) !important;
+  font-style: italic;
+}
+
+/* List text + link underline like reference */
+.project-details__list,
+.project-details__list li,
+.project-details__list a {
+  color: #fff !important;
+}
+
+.project-details__list a {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+}
+
+/* Price line */
+.project-details__price {
+  color: #fff !important;
+  font-weight: 900;
+}
+
+/* Check icon circles */
+.project-details__check {
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.35);
+  color: #fff !important;
+}
+
+/* ---- Media card: match the left reference frame ---- */
+.project-details__video-card{
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+
+  /* framed edge */
+  padding: 10px;
+  background: rgba(0,0,0,0.18);
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.30);
+}
+
+.project-details__video-card::after{
+  content:"";
+  position:absolute;
+  inset:10px;              /* must match padding */
+  border-radius: 20px;
+  pointer-events:none;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12);
+}
+
+/* iframe itself */
+.project-details__iframe{
+  width:100%;
+  aspect-ratio:16/9;
+  border:0;
+  display:block;
+  border-radius:20px;
+  background:#000;
+}
+
+/* Mobile: keep image/video first, text second (you requested this) */
+@media (max-width: 900px){
+  .project-details__grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .project-details__media{ order: 1; }
+  .project-details__content{ order: 2; }
+}
+/* =========================
+   PROJECT DETAILS – FORCE 60 / 40 LAYOUT
+   ========================= */
+
+.project-details__grid{
+  display: grid;
+  grid-template-columns: 60% 40%;
+  align-items: center;
+  gap: 56px;
+}
+
+/* prevent it collapsing wider screens */
+@media (min-width: 1200px){
+  .project-details__grid{
+    max-width: 1320px;
+    margin-inline: auto;
+  }
+}
+
+/* Mobile stays stacked (video first) */
+@media (max-width: 900px){
+  .project-details__grid{
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .project-details__media{ order: 1; }
+  .project-details__content{ order: 2; }
+}
+/* Fix hero image cropping on mobile */
+@media (max-width: 768px) {
+
+
+  .hero--split .hero__media {
+    min-height: auto;
+  }
+    .hero--split .hero__image {
+    object-fit: contain;
+    background: #000; /* optional for empty space */
+  }
+}
+/* =========================
+   Reduce Top Header Height
+   ========================= */
+
+.header {
+  height: 80px;          /* was probably 100–120px */
+}
+
+.nav {
+  padding: 0 20px;       /* reduce vertical spacing */
+}
+
+.nav__container {
+  height: 80px;          /* match header height */
+  align-items: center;
+}
+
+/* Reduce logo size */
+.nav__logo img {
+  height: 48px;          /* adjust between 40–55px */
+}
+
+/* Adjust nav links spacing */
+.nav__menu {
+  gap: 28px;             /* slightly tighter */
+}
+
+/* Reduce CTA button height */
+.nav__cta {
+  padding: 10px 22px;
+  font-size: 14px;
+}
+/* Header */
+.header {
+  padding: 12px 0;   /* control banner size using padding */
+}
+
+/* Remove fixed height if you have it */
+.nav__container {
+  height: auto;
+  min-height: 70px;  /* optional clean minimum */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Keep logo size stable */
+.nav__logo img {
+  height: 52px;   /* choose 48–55px */
+  width: auto;
+}
+/* =========================
+   4 Image Placeholder Grid
+   ========================= */
+
+.location-gallery {
+  padding: 100px 0;
+  background: #f5f6f8; /* match your light section */
+}
+
+.location-gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.location-gallery__item {
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+  transition: transform 0.4s ease;
+}
+
+.location-gallery__item:hover {
+  transform: translateY(-6px);
+}
+
+.location-gallery__item img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .location-gallery__grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+/* Reduce vertical spacing between stacked images */
+
+.location-grid {
+  row-gap: 24px;   /* controls vertical space */
+  column-gap: 40px;
+}
+
+.location-grid__item {
+  margin-bottom: 0;  /* remove extra bottom spacing */
+}
+/* ===== Header logo alignment + fit (ADD AT VERY END) ===== */
+
+/* 1) Pull header content slightly closer to the left edge */
+.header .container {
+  padding-left: 16px;   /* was 32px on desktop override */
+  padding-right: 24px;
+}
+
+/* 2) Remove extra vertical padding around logo link */
+.header__logo {
+  padding: 0;           /* you currently have padding: 5px 0 */
+}
+
+/* 3) Make logo fit better inside the banner */
+.logo-img {
+  height: 56px;         /* smaller so it fits cleanly */
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* 4) Slightly smaller when scrolled (optional, but looks premium) */
+.header.scrolled .logo-img {
+  height: 46px;
+}
+/* =========================================
+   HERO – IDENTICAL TO SECOND SCREENSHOT
+   ========================================= */
+
+@media (max-width: 480px) {
+
+  /* Reduce panel padding */
+  .hero--split .hero__panel {
+    padding: 24px 22px;
+  }
+
+  /* Eyebrow text */
+  .hero--split .hero__eyebrow {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.9rem;
+  }
+
+  /* MAIN HEADLINE */
+  .hero--split .hero__headline {
+    font-size: 2.6rem;          /* controlled size */
+    line-height: 0.9;           /* tight like screenshot */
+    letter-spacing: 0.04em;     /* slightly condensed look */
+    font-weight: 800;
+    max-width: 11ch;            /* forces compact stacked look */
+    margin-bottom: 1.2rem;
+  }
+
+  /* Subheadline */
+  .hero--split .hero__subheadline {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1.4rem;
+  }
+
+  /* Bullet spacing */
+  .hero--split .hero__bullets {
+    gap: 0.8rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .hero--split .hero__bullets li {
+    font-size: 1.05rem;
+  }
+
+  /* Bottom callout */
+  .hero--split .hero__callout {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-top: 1.2rem;
+  }
+}
+/* ===== Mobile headline sizing (match your 2nd screenshot) ===== */
+@media (max-width: 480px) {
+  .hero--split .hero__panel { padding: 24px 22px; }
+
+  .hero--split .hero__headline{
+    font-size: 2.4rem;
+    line-height: 0.9;
+    letter-spacing: 0.04em;
+    max-width: 11ch;
+    margin-bottom: 1.2rem;
+  }
+
+  .hero--split .hero__subheadline{
+    font-size: 1.2rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .hero--split .hero__bullets li{
+    font-size: 1.05rem;
+  }
+
+  .hero--split .hero__callout{
+    font-size: 1.4rem;
+  }
+}
+/* ===== MOBILE HERO FONT TUNING ===== */
+@media (max-width: 480px) {
+
+  /* 1️⃣ Eyebrow – slightly bigger */
+  .hero--split .hero__eyebrow {
+    font-size: 1.15rem;
+  }
+
+  /* 2️⃣ Main headline – slightly smaller */
+  .hero--split .hero__headline {
+    font-size: 2.3rem;
+    line-height: 0.9;
+  }
+
+  /* 3️⃣ Subheadline – slightly bigger */
+  .hero--split .hero__subheadline {
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+
+}
+/* ============================================
+   HERO TYPOGRAPHY REFINEMENT (BILLBOARD STYLE)
+   ============================================ */
+
+/* Use condensed display font for headline */
+.hero--split .hero__headline {
+  font-family: 'Bebas Neue', var(--font-body);
+  letter-spacing: 0.02em; /* Condensed fonts need less spacing */
+}
+
+/* MOBILE TUNING */
+@media (max-width: 480px) {
+
+  /* 1️⃣ Slightly bigger – "Stay Connected Always" */
+  .hero--split .hero__eyebrow {
+    font-size: 1.2rem;
+  }
+
+  /* 2️⃣ Slightly smaller – Main headline */
+  .hero--split .hero__headline {
+    font-size: 2.55rem;
+    line-height: 0.92;
+    max-width: 12ch;   /* keeps stacked compact look */
+  }
+
+  /* 3️⃣ Slightly bigger – "Final Phase Open Now!" */
+  .hero--split .hero__subheadline {
+    font-size: 1.45rem;
+  }
+
+}
+/* =========================================
+   HERO TEXT REFINEMENT
+   ========================================= */
+
+/* Make "Final Phase Open Now!" bold */
+.hero--split .hero__subheadline {
+  font-weight: 700;
+}
+
+/* Make "Sheltered Walkway To Dato’ Menteri LRT" bold */
+.hero--split .hero__callout {
+  font-weight: 700;
+}
+
+/* Remove extra spacing between bullet items */
+.hero--split .hero__bullets {
+  gap: 0.4rem;      /* tighter spacing */
+}
+
+.hero--split .hero__bullets li {
+  margin-bottom: 0; /* remove extra bottom spacing */
+  line-height: 1.35;
+}
+/* Remove gap between Sheltered Walkway lines */
+.hero--split .hero__callout {
+  line-height: 1.05;   /* tighter */
+  margin-bottom: 0;
+}
+/* Slightly bigger eyebrow text */
+.hero--split .hero__eyebrow {
+  font-size: 1.25rem;
+}
+/* =========================================
+   MOBILE HERO ORDER FIX
+   ========================================= */
+
+@media (max-width: 768px) {
+
+  .hero--split {
+    display: flex;
+    flex-direction: column-reverse; /* TEXT first, image below */
+  }
+
+}
+/* =========================================
+   HERO (Split) — NO-CROP IMAGE + CLEAN PANEL
+   Matches your 1st screenshot layout
+   ========================================= */
+
+/* Make the right media area a framed container */
+.hero--split .hero__media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* nice “card” look like screenshot */
+  background: #fff;
+  border-radius: 28px;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.12);
+
+  /* IMPORTANT: keep image fully visible */
+  overflow: hidden;
+
+  /* breathing space inside the frame */
+  padding: clamp(12px, 1.8vw, 24px);
+}
+
+/* Show FULL image: no cropping */
+.hero--split .hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;        /* <-- key change */
+  object-position: center;
+  display: block;
+}
+
+/* Desktop: keep the split proportions looking like your screenshot */
+@media (min-width: 901px) {
+  .hero--split .hero__layout {
+    align-items: stretch;
+  }
+  .hero--split .hero__media {
+    margin: clamp(16px, 2vw, 28px);
+  }
+}
+
+/* Mobile/tablet: text first, image below, still no-crop */
+@media (max-width: 900px) {
+  .hero--split .hero__layout {
+    grid-template-areas:
+      "panel"
+      "media";
+  }
+
+  .hero--split .hero__media {
+    min-height: 52vh;          /* gives image enough height to be readable */
+    margin: 16px;              /* keep nice edge spacing */
+  }
+}
+/* =====================================
+   4x2 Combined Grid Layout
+   ===================================== */
+
+.location-combined__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* Image Styling */
+.location-combined__image img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+}
+
+/* Amenity Card Styling */
+.location-combined .amenity-card {
+  background: #fff;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .location-combined__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .location-combined__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .location-combined__image img {
+    height: auto;
+  }
+}
+/* Make image + caption act as one card */
+.location-showcase__img {
+  background: #f4f4f4;
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Remove bottom radius from image so caption blends */
+.location-showcase__img img {
+  display: block;
+  width: 100%;
+  border-radius: 24px 24px 0 0;
+}
+
+/* Caption styled as part of card */
+.location-showcase__caption {
+  padding: 14px 18px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #b98a3c;
+  background: #f4f4f4;
+}
+/* ======================================
+   FIX: Location Showcase captions clipped
+   Move fixed height from figure -> image
+   ====================================== */
+
+/* Make the figure act like a card that can grow */
+.location-showcase__img {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #f4f4f4;
+}
+
+/* Stop image from stretching to 100% of figure height */
+.location-showcase__img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Apply heights to the IMAGE (not the card) */
+.location-showcase__img--small img {
+  height: 220px;
+  object-fit: cover;
+}
+
+.location-showcase__img--large img {
+  height: 520px;
+  object-fit: cover;
+}
+
+/* Caption is now inside the card (won't be clipped) */
+.location-showcase__caption {
+  padding: 14px 18px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--gold);
+  background: #f4f4f4;
+  margin: 0;
+}
+
+/* Mobile sizes (match your existing breakpoints) */
+@media (max-width: 1024px) {
+  .location-showcase__img--large img {
+    height: 420px;
+  }
+}
+
+@media (max-width: 600px) {
+  .location-showcase__img--small img {
+    height: 200px;
+  }
+  .location-showcase__img--large img {
+    height: 340px;
+  }
+}
+/* ======================================
+   PREMIUM IMAGE OVERLAY CAPTION
+   ====================================== */
+
+.location-showcase__img {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+/* Keep images clean */
+.location-showcase__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Caption overlay */
+.location-showcase__caption {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+
+  padding: 18px 22px;
+
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+
+  /* Dark gradient fade */
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.65) 0%,
+    rgba(0,0,0,0.45) 40%,
+    rgba(0,0,0,0.0) 100%
+  );
+}
+@media (max-width: 600px) {
+  .location-combined__grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Force order: image then its card */
+  .location-combined__grid > :nth-child(1) { order: 1; }  /* img1 */
+  .location-combined__grid > :nth-child(5) { order: 2; }  /* card1 */
+
+  .location-combined__grid > :nth-child(2) { order: 3; }  /* img2 */
+  .location-combined__grid > :nth-child(6) { order: 4; }  /* card2 */
+
+  .location-combined__grid > :nth-child(3) { order: 5; }  /* img3 */
+  .location-combined__grid > :nth-child(7) { order: 6; }  /* card3 */
+
+  .location-combined__grid > :nth-child(4) { order: 7; }  /* img4 */
+  .location-combined__grid > :nth-child(8) { order: 8; }  /* card4 */
+}
+/* =====================================
+   Gallery Captions
+   ===================================== */
+
+.location-combined__image {
+  display: flex;
+  flex-direction: column;
+}
+
+.location-combined__image img {
+  width: 100%;
+  border-radius: 16px;
+  display: block;
+}
+
+.location-combined__caption {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--gold); /* or #b98a3c */
+}
+/* =====================================
+   LRT Connectivity Section
+   ===================================== */
+
+.connectivity {
+  padding: 100px 0;
+  background: #f8f8f8;
+}
+
+.connectivity__header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px;
+}
+
+.connectivity__eyebrow {
+  color: var(--gold);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+
+.connectivity__title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 20px;
+}
+
+.connectivity__desc {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.connectivity__map {
+  margin-top: 40px;
+}
+
+.connectivity__map img {
+  width: 100%;
+  height: auto;
+  border-radius: 24px;
+  display: block;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.08);
+}
+/* =====================================
+   Virtual Tour (before Connectivity)
+   ===================================== */
+
+.virtual-tour {
+  padding: 90px 0;
+  background: #f6edcf; /* soft gold */
+}
+
+.virtual-tour__header {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 34px;
+}
+
+.virtual-tour__title {
+  margin: 0 0 16px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #b98a3c; /* gold */
+  font-size: clamp(1.6rem, 3.6vw, 2.6rem);
+}
+
+.virtual-tour__desc {
+  margin: 0;
+  color: #111;
+  font-weight: 600;
+  font-size: clamp(1.05rem, 2.1vw, 1.25rem);
+  line-height: 1.55;
+}
+
+.virtual-tour__frame {
+  max-width: 980px;
+  margin: 0 auto;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.14);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+/* Responsive iframe */
+.virtual-tour__frame iframe {
+  width: 100%;
+  height: min(72vh, 720px);
+  border: 0;
+  display: block;
+}
+
+/* CTA */
+.virtual-tour__cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 22px;
+}
+
+/* Mobile tune */
+@media (max-width: 600px) {
+  .virtual-tour {
+    padding: 70px 0;
+  }
+  .virtual-tour__frame iframe {
+    height: 62vh; /* better on phones */
+  }
+}
+/* Center location image captions */
+
+.location-combined__image {
+  text-align: center;
+}
+
+.location-combined__image p,
+.location-combined__image .caption,
+.location-combined__image span {
+  display: block;
+  text-align: center;
+  margin-top: 12px;
+  font-weight: 600;
+}
+/* =====================================
+   Mobile Pair Layout + Spacing
+   ===================================== */
+
+@media (max-width: 768px) {
+
+  .location-combined__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0; /* remove default gap */
+  }
+
+  /* Pair spacing after each amenity card */
+  .location-combined__grid .amenity-card {
+    margin-bottom: 40px; /* spacing before next image */
+  }
+
+}
+/* =====================================
+   Full Stretch Image on Mobile
+   ===================================== */
+
+@media (max-width: 768px) {
+
+  .location__map {
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .location__map img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0; /* remove rounded corners for full stretch */
+  }
+
+}
+
+
+
+
