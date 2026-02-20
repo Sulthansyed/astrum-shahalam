@@ -3866,6 +3866,33 @@ section {
   }
 
 }
+@media (max-width: 768px) {
+
+  /* Let the map break out of any container clipping */
+  .location__map{
+    position: relative;
+    left: 50%;
+    right: 50%;
+    width: 100vw;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    max-width: 100vw;
+  }
+
+  .location__map img{
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0;
+  }
+
+}
+@media (max-width: 768px) {
+  .connectivity,
+  .connectivity .container{
+    overflow: visible !important;
+  }
+}
 
 
 
